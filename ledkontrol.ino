@@ -11,15 +11,13 @@ int parlaklik = 255;
 
 
 void setup() {
-  // put your setup code here, to run once:
   pinMode(led, OUTPUT);
   Serial.begin(9600);
   irrecv.enableIRIn();
   analogWrite(led, parlaklik);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop() 
   if (irrecv.decode(&results))
   {
     if (results.value == yukari)
